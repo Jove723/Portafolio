@@ -244,6 +244,15 @@
       </footer>
 
       <nav class="navbar">
+        <svg style="display: none;">
+          <defs>
+            <filter id="liquidGlass">
+              <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise" seed="2" />
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" />
+              <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
+            </filter>
+          </defs>
+        </svg>
         <div class="navbar-wrapper">
           <a class="navbar-item" href="#about">
             <div class="nav-icon">

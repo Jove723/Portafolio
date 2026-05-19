@@ -629,29 +629,18 @@ footer .contact-info {
     border-radius: var(--radius-full);
     display: flex;
     align-items: center;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    filter: url(#liquidGlass);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     z-index: 1000;
     isolation: isolate;
 }
 
-.navbar::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: var(--radius-full);
-    backdrop-filter: blur(2rem);
-    background-color: rgba(0, 0, 0, 0.374);
-    z-index: -1;
-}
-
-.darkmode .navbar::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: var(--radius-full);
-    backdrop-filter: blur(2rem);
-    background-color: rgba(255, 255, 255, 0.167);
-    z-index: -1;
+.darkmode .navbar {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar-wrapper {
