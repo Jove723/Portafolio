@@ -642,7 +642,6 @@ footer .contact-info {
     border-radius: var(--radius-full);
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    filter: url(#liquid-glass);
     z-index: -1;
 }
 
