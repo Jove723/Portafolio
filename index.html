@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jorge Vergara - UX/UI Designer</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="styles-tablet.css" media="(max-width:1201px)">
-  <link rel="stylesheet" href="styles-mobile.css" media="(max-width:781px)">
+  <link rel="stylesheet" href="src/styles.css">
+  <link rel="stylesheet" href="src/styles-tablet.css" media="(max-width:1201px)">
+  <link rel="stylesheet" href="src/styles-mobile.css" media="(max-width:781px)">
 </head>
 <body>
-  <img class="bg-image" src="assets/Images/Background_Light.png">
+  <img class="bg-image" src="src/assets/Images/Background_Light.png">
   <main class="portafolio">
     <!-- About Section -->
     <section class="about" id="about">
@@ -29,7 +29,7 @@
           </button>
           <div class="lang-dropdown">
             <button class="lang-selected" id="lang-btn">
-              <img src="assets/Images/Spain_Flag.png" alt="ES" class="flag-icon">
+              <img src="src/assets/Images/Spain_Flag.png" alt="ES" class="flag-icon">
               <span class="lang-label">ES</span>
               <svg class="lang-arrow" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
@@ -37,15 +37,15 @@
             </button>
             <ul class="lang-menu">
               <li class="lang-option" data-value="es">
-                <img src="assets/Images/Spain_Flag.png" alt="ES" class="flag-icon">
+                <img src="src/assets/Images/Spain_Flag.png" alt="ES" class="flag-icon">
                 <span>ES</span>
               </li>
               <li class="lang-option" data-value="en">
-                <img src="assets/Images/UK_Flag.png" alt="EN" class="flag-icon">
+                <img src="src/assets/Images/UK_Flag.png" alt="EN" class="flag-icon">
                 <span>EN</span>
               </li>
               <li class="lang-option" data-value="pt">
-                <img src="assets/Images/Port_Flag.png" alt="PT" class="flag-icon">
+                <img src="src/assets/Images/Port_Flag.png" alt="PT" class="flag-icon">
                 <span>PT</span>
               </li>
             </ul>
@@ -119,7 +119,7 @@
 
         <div class="projects-grid">
           <div class="project-card">
-            <img src="assets/images/Work1.jpg" alt="" class="project-image">
+            <img src="src/assets/Images/Work1.jpg" alt="" class="project-image">
             <svg width="18" height="19" viewBox="0 0 18 19"  xmlns="http://www.w3.org/2000/svg" class="project-arrow">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M18 0.770792C18 0.566365 17.921 0.370311 17.7803 0.22576C17.6397 0.0812078 17.4489 0 17.25 0H8.25051C8.05161 0 7.86085 0.0812078 7.72021 0.22576C7.57957 0.370311 7.50055 0.566365 7.50055 0.770792C7.50055 0.975219 7.57957 1.17127 7.72021 1.31583C7.86085 1.46038 8.05161 1.54159 8.25051 1.54159H15.4396L0.219934 17.1825C0.0791119 17.3272 0 17.5235 0 17.7282C0 17.9329 0.0791119 18.1292 0.219934 18.274C0.360757 18.4187 0.551755 18.5 0.750908 18.5C0.950061 18.5 1.14106 18.4187 1.28188 18.274L16.5001 2.63148V10.0203C16.5001 10.2247 16.5791 10.4208 16.7197 10.5653C16.8604 10.7099 17.0511 10.7911 17.25 10.7911C17.4489 10.7911 17.6397 10.7099 17.7803 10.5653C17.921 10.4208 18 10.2247 18 10.0203V0.770792Z" fill="currentColor"/>
             </svg>
@@ -146,7 +146,7 @@
 
         <div class="projects-grid">
           <div class="project-card">
-            <img src="assets/images/Work2.jpg" alt="" class="project-image">
+            <img src="src/assets/Images/Work2.jpg" alt="" class="project-image">
             <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="project-arrow">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M18 0.770792C18 0.566365 17.921 0.370311 17.7803 0.22576C17.6397 0.0812078 17.4489 0 17.25 0H8.25051C8.05161 0 7.86085 0.0812078 7.72021 0.22576C7.57957 0.370311 7.50055 0.566365 7.50055 0.770792C7.50055 0.975219 7.57957 1.17127 7.72021 1.31583C7.86085 1.46038 8.05161 1.54159 8.25051 1.54159H15.4396L0.219934 17.1825C0.0791119 17.3272 0 17.5235 0 17.7282C0 17.9329 0.0791119 18.1292 0.219934 18.274C0.360757 18.4187 0.551755 18.5 0.750908 18.5C0.950061 18.5 1.14106 18.4187 1.28188 18.274L16.5001 2.63148V10.0203C16.5001 10.2247 16.5791 10.4208 16.7197 10.5653C16.8604 10.7099 17.0511 10.7911 17.25 10.7911C17.4489 10.7911 17.6397 10.7099 17.7803 10.5653C17.921 10.4208 18 10.2247 18 10.0203V0.770792Z" fill="currentColor"/>
             </svg>
@@ -187,15 +187,15 @@
         </ul>
 
         <div class="tools-grid">
-          <img class="tools-item" src="assets/Images/Affinity_Logo 1.png" alt="">
-          <img class="tools-item" src="assets/Images/AI_Logo 1.png" alt="">
-          <img class="tools-item" src="assets/Images/Blender_Logo 1.png" alt="">
-          <img class="tools-item" src="assets/Images/CS_Logo 1.png" alt="">
-          <img class="tools-item" src="assets/Images/CSS_Logo 1.png" alt="">
-          <img class="tools-item" src="assets/Images/Figma_Logo 1.png" alt="">
-          <img class="tools-item" src="assets/Images/HTML_Logo 1.png" alt="">
-          <img class="tools-item" src="assets/Images/PS_Logo 1.png" alt="">
-          <img class="tools-item" src="assets/Images/Unity_Logo 1.png" alt="">
+          <img class="tools-item" src="src/assets/Images/Affinity_Logo 1.png" alt="">
+          <img class="tools-item" src="src/assets/Images/AI_Logo 1.png" alt="">
+          <img class="tools-item" src="src/assets/Images/Blender_Logo 1.png" alt="">
+          <img class="tools-item" src="src/assets/Images/CS_Logo 1.png" alt="">
+          <img class="tools-item" src="src/assets/Images/CSS_Logo 1.png" alt="">
+          <img class="tools-item" src="src/assets/Images/Figma_Logo 1.png" alt="">
+          <img class="tools-item" src="src/assets/Images/HTML_Logo 1.png" alt="">
+          <img class="tools-item" src="src/assets/Images/PS_Logo 1.png" alt="">
+          <img class="tools-item" src="src/assets/Images/Unity_Logo 1.png" alt="">
         </div>
 
         <div class="language-list" id="lang-bar">
@@ -291,7 +291,7 @@
       </nav>
   </main>
 </body>
-<script src="i18n.js"></script>
-<script src="script.js"></script>
-<script src="darkmode.js"></script>
+<script src="src/i18n.js"></script>
+<script src="src/script.js"></script>
+<script src="src/darkmode.js"></script>
 </html>
