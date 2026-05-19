@@ -1,0 +1,63 @@
+{
+  "header": {
+    "status": "Disponible",
+    "contactBtn": "Contáctame"
+  },
+  "nav": {
+    "about": "Inicio",
+    "summary": "Resumen",
+    "work": "Experiencia",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "role": "DISEÑADOR UI/UX",
+    "name": "Jorge Vergara"
+  },
+  "summary": {
+    "title": "Resumen",
+    "text1": "Soy un diseñador de producto <strong>UX/UI</strong> y <strong>artista 3D</strong> orientado al detalle, dedicado a crear experiencias digitales inmersivas e intuitivas. Con formación en <strong>Comunicación y Entretenimiento Digital</strong>, he centrado mi carrera en cerrar la brecha entre la complejidad técnica y la narrativa visual, asegurando que cada interacción sea tan funcional como estéticamente atractiva.",
+    "text2": "A lo largo de mi trayectoria, me he especializado en modelado 3D, animación y desarrollo de videojuegos, dominando herramientas como <strong>Blender y Unity</strong> para dar vida a mundos interactivos. Mi enfoque combina una profunda comprensión del diseño centrado en el usuario con una sólida base técnica en <strong>C#, HTML, CSS y JavaScript</strong>, lo que me permite colaborar eficazmente con equipos de desarrollo y transformar prototipos de alta fidelidad en realidades tangibles.",
+    "quote": "Impulsado por la curiosidad y el compromiso con la innovación, exploro continuamente los límites del diseño de interacción, ya sea desarrollando juegos móviles, creando interfaces o trayendo ideas a la realidad mediante la animación."
+  },
+  "work": {
+    "title": "Experiencia Laboral",
+    "uxuiRole": "DISEÑADOR UX/UI",
+    "uxuiDesc1": "He centrado mi enfoque en el diseño UX/UI en la creación de interfaces que no solo son estéticamente atractivas, sino profundamente funcionales y centradas en el usuario.",
+    "uxuiDesc2": "Mi trabajo se basa en la traducción de requisitos de negocio complejos en wireframes de alta fidelidad, prototipos interactivos y flujos de usuario intuitivos que optimizan la conversión y mejoran la usabilidad.",
+    "uxuiDesc3": "Poseo una sólida comprensión de los principios de diseño atómico y patrones de interacción estándar de la industria.",
+    "projectsTitle": "Proyectos Destacados",
+    "project1": {
+      "name": "Aperture",
+      "desc": "Diseño de interfaz Web"
+    },
+    "artRole": "ARTE 3D & ANIMACIÓN DIGITAL",
+    "artDesc1": "He perfeccionado mis habilidades en arte 3D y animación para crear activos digitales que complementan la narrativa visual y el diseño de interacción.",
+    "artDesc2": "Mi enfoque abarca desde el modelado poligonal limpio y el texturizado detallado hasta el rigging y la animación de personajes, garantizando la consistencia estilística y la optimización para motores de renderizado o aplicaciones interactivas.",
+    "artDesc3": "He adquirido la capacidad de traducir conceptos abstractos en activos 3D funcionales con una estética profesional.",
+    "project2": {
+      "name": "Toma el Control",
+      "desc": "Animación 3D"
+    }
+  },
+  "skills": {
+    "title": "Habilidades y Herramientas",
+    "skills": [
+      "Diseño de Interacción",
+      "Prototipado de Alta Fidelización",
+      "Desarrollo de Videojuegos",
+      "Programación de Lógica",
+      "Modelado y Animación 3D",
+      "Arquitectura de Información",
+      "Diseño Web Responsive"
+    ],
+    "languagesTitle": "Idiomas",
+    "languages": {
+      "spanish": "Español",
+      "english": "Inglés"
+    }
+  },
+  "contact": {
+    "title": "Contacto"
+  }
+}

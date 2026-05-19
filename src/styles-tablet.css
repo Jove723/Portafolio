@@ -1,0 +1,84 @@
+.bg-image {
+  
+  object-position: 80% 50%;
+  height: 100%;
+  width: 100%;
+}
+
+.bg-blurred {
+  filter: blur(30px);
+}
+
+
+.portafolio {
+  
+  gap: var(--space-30);
+  padding: 4rem 8rem;
+
+}
+
+/* Section Prefab */
+.section {
+  padding-right: 5%;
+  
+  gap: var(--space-30);
+  margin-bottom: var(--space-100);
+  scroll-margin-top: 4rem;
+}
+
+/* About Section */
+.about {
+  min-height: 90vh;
+  max-width: 162rem;
+}
+
+/* Language Selector */
+.lang-selector {
+  border: none;
+  padding: 0;
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+}
+
+.lang-item {
+  width: 2rem;
+}
+
+/* Theme Toggle */
+
+/* Hero Section */
+.hero {
+  bottom: 32rem;
+}
+
+
+/* Contact Info */
+.contact-info {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.contact-info-footer {
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--space-5);
+  height: 15vh;
+}
+
+
+/* Skills & Tools */
+
+.skills-grid {
+  width: 80%;
+}
+
+.tools-grid {
+  gap: var(--space-60);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+
+
+
+
+
+

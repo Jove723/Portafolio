@@ -1,0 +1,129 @@
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+footer .contact-info {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--space-30);
+  width: fit-content;
+}
+
+.bg-image {
+  object-position: 40% 60%;
+  height: 100%;
+  width: 100%;
+}
+
+
+.portafolio {
+  gap: var(--space-20);
+  padding: 3rem 2rem;
+}
+
+/* Section Prefab */
+.section {
+  padding-right: 5%;
+  gap: var(--space-30);
+  margin-bottom: var(--space-100);
+  scroll-margin-top: 4rem;
+}
+
+/* About Section */
+.about {
+  min-height: 100vh;
+  max-width: 100%;
+}
+
+/* Header */
+.header {
+  align-items: flex-start;
+  height: fit-content;
+}
+.header-right {
+  flex-direction: column-reverse;
+  gap: var(--space-20);
+  align-items: flex-end;
+}
+
+/* Language Selector */
+.lang-selector {
+  padding: 0;
+}
+
+/* Hero Section */
+.hero {
+  bottom: 32rem;
+}
+
+
+/* Contact Info */
+.contact-info {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.contact-info-footer {
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--space-5);
+  height: 15vh;
+}
+
+.contact-item {
+  font-size: var(--font-size-lg);
+}
+
+/* Summary Section */
+
+
+
+.summary-text {
+  max-width: 100%;
+}
+
+
+/* Work Experience Section */
+
+
+.work-description {
+  max-width: 100%;
+}
+
+.projects-grid {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+
+/* Skills & Tools */
+
+.skills-grid {
+  grid-template-columns: repeat(1, 1fr);
+  min-width: 0;
+}
+
+.tools-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-30);
+  justify-items: center;
+  align-items: center;
+}
+
+.tools-item {
+  max-height: var(--space-60);
+}
+
+.language-bar-bg {
+  width: 60vw;
+}
+
+/* Nav Bar */
+
+.navbar {
+  bottom: var(--space-15);
+}
+
+
+.nav-text {
+  display: none;
+}
