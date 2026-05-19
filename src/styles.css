@@ -665,7 +665,7 @@ footer .contact-info {
 }
 
 .navbar-item:not(.navbar-item-selected):hover {
-    animation: pulse 1s infinite;
+    animation: pulse 1s;
 }
 
 .nav-icon {
