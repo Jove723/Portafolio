@@ -630,16 +630,24 @@ footer .contact-info {
     display: flex;
     align-items: center;
     backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    filter: url(#liquidGlass);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     z-index: 1000;
     isolation: isolate;
 }
 
-.darkmode .navbar {
-    background: rgba(0, 0, 0, 0.3);
+.navbar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    filter: url(#liquidGlass);
+    z-index: -1;
+}
+
+.darkmode .navbar::before {
+    background: rgba(0, 0, 0, 0.35);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
