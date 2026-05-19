@@ -50,6 +50,14 @@
   /* Transitions */
   --transition-fast: 150ms ease-out;
   --transition-normal: 250ms ease-out;
+
+  /* Liquid Glass parameters */
+  --glass-blur: 15px;
+  --glass-opacity: 0.12;
+  --glass-refraction: 15;
+  --glass-highlight-opacity: 0.3;
+  --glass-highlight-angle: 45deg;
+  --glass-highlight-pos: 50%;
 }
 
 /* Colors - Dark Mode */
@@ -57,7 +65,9 @@
   --color-primary: #90a955;
   --color-text: #dce0d9;
   --color-button:#264027;
-  --color-button-bg:#dce0d9;  
+  --color-button-bg:#dce0d9;
+  --glass-opacity: 0.2;
+  --glass-highlight-opacity: 0.15;
 }
 
 /* Icon colors */
@@ -620,7 +630,7 @@ footer .contact-info {
   animation: progress-es 2s ease-out forwards;
 }
 
-/* Nav Bar */
+/* Nav Bar - Liquid Glass */
 .navbar {
     position: fixed;
     bottom: var(--space-30);
@@ -629,26 +639,51 @@ footer .contact-info {
     border-radius: var(--radius-full);
     display: flex;
     align-items: center;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     z-index: 1000;
     isolation: isolate;
+    will-change: backdrop-filter;
 }
 
+/* Refraction layer - distorsión tipo vidrio */
 .navbar::before {
     content: '';
     position: absolute;
     inset: 0;
     border-radius: var(--radius-full);
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, var(--glass-opacity));
     border: 1px solid rgba(255, 255, 255, 0.2);
     filter: url(#liquid-glass);
     z-index: -1;
+    pointer-events: none;
 }
 
 .darkmode .navbar::before {
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, var(--glass-opacity));
     border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Specular highlight layer - brillo dinámico tipo Apple */
+.navbar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-full);
+    background:
+        linear-gradient(
+            var(--glass-highlight-angle),
+            transparent calc(var(--glass-highlight-pos) - 20%),
+            rgba(255, 255, 255, var(--glass-highlight-opacity)) var(--glass-highlight-pos),
+            transparent calc(var(--glass-highlight-pos) + 20%)
+        );
+    z-index: -1;
+    pointer-events: none;
+}
+
+.darkmode .navbar::after {
+    opacity: 0.6;
 }
 
 .navbar-wrapper {
