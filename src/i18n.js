@@ -7,7 +7,7 @@ let currentLanguage = DEFAULT_LANGUAGE;
 
 async function loadTranslations(lang) {
     try {
-        const response = await fetch(`translations/${lang}.json`);
+        const response = await fetch(`src/translations/${lang}.json`);
         if (!response.ok) throw new Error(`Failed to load ${lang}.json`);
         translations = await response.json();
         currentLanguage = lang;

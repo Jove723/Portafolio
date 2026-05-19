@@ -3,13 +3,13 @@ const body = document.body;
 
 function enableDarkmode() {
     body.classList.add('darkmode');
-    bgImage.src = 'assets/Images/Background_Dark.png';
+    bgImage.src = 'src/assets/Images/Background_Dark.png';
     localStorage.setItem('theme', 'dark');
 }
 
 function disableDarkmode() {
     body.classList.remove('darkmode');
-    bgImage.src = 'assets/Images/Background_Light.png';
+    bgImage.src = 'src/assets/Images/Background_Light.png';
     localStorage.setItem('theme', 'light');
 }
 
