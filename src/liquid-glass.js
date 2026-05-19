@@ -1,79 +1,91 @@
-const navbar = document.querySelector('.navbar');
-const glassVars = navbar?.style;
+/**
+ * Aplica el efecto Liquid Glass a cualquier elemento sin distorsionar sus bordes ni texto.
+ * @param {string} selector - El selector CSS del elemento (ej: '.navbar')
+ * @param {number} intensidad - Qué tanto se deforma el fondo (por defecto 15)
+ */
+function aplicarLiquidGlass(selector, intensidad = 15) {
+  // 1. Crear e inyectar el filtro SVG si no existe ya en el documento
+  if (!document.getElementById('liquid-glass-filter')) {
+    const svgFilter = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svgFilter.setAttribute("id", "liquid-glass-filter");
+    svgFilter.style.cssText = "visibility: hidden; position: absolute; width: 0; height: 0;";
 
-let mouseX = 50;
-let targetPos = 50;
-let targetAngle = 45;
-let currentPos = 50;
-let currentAngle = 45;
-let isAnimating = false;
+    svgFilter.innerHTML = `
+      <filter id="liquid-glass-effect">
+        <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="${intensidad}" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    `;
+    document.body.appendChild(svgFilter);
+  }
 
-function lerp(a, b, t) {
-  return a + (b - a) * t;
-}
+  const elemento = document.querySelector(selector);
+  if (!elemento) return;
 
-function updateGlass() {
-  if (!navbar) return;
+  // Parámetro dinámico
+  elemento.style.setProperty('--lg-blur', '6');
 
-  currentPos = lerp(currentPos, targetPos, 0.1);
-  currentAngle = lerp(currentAngle, targetAngle, 0.08);
+  // 2. Inyectar <style> para el ::before con transform: scale() que esconde bordes
+  const styleId = `liquid-glass-style-${selector.replace(/[^a-zA-Z0-9]/g, '-')}`;
+  if (!document.getElementById(styleId)) {
+    const estilo = document.createElement('style');
+    estilo.id = styleId;
+    estilo.innerHTML = `
+      ${selector}::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        z-index: -1;
+        background: rgba(255, 255, 255, 0);
+        backdrop-filter: blur(calc(var(--lg-blur, 16) * 1px));
+        -webkit-backdrop-filter: blur(calc(var(--lg-blur, 16) * 1px));
+        filter: url(#liquid-glass-effect);
+        transform: scale(1.06);
+        pointer-events: none;
+      }
+    `;
+    document.head.appendChild(estilo);
+  }
 
-  navbar.style.setProperty('--glass-highlight-pos', `${currentPos}%`);
-  navbar.style.setProperty('--glass-highlight-angle', `${currentAngle}deg`);
-
-  if (Math.abs(currentPos - targetPos) > 0.1 || Math.abs(currentAngle - targetAngle) > 0.1) {
-    requestAnimationFrame(updateGlass);
-  } else {
-    isAnimating = false;
+  // 3. Specular highlight estático solo en el borde (::after)
+  const highlightStyleId = `${styleId}-highlight`;
+  if (!document.getElementById(highlightStyleId)) {
+    const hlStyle = document.createElement('style');
+    hlStyle.id = highlightStyleId;
+    hlStyle.innerHTML = `
+      ${selector}::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        z-index: -1;
+        padding: 1px;
+        background: conic-gradient(
+            from 0deg,
+            transparent 0deg,
+            rgba(255, 255, 255, 0.35) 20deg,
+            transparent 40deg,
+            transparent 180deg,
+            rgba(255, 255, 255, 0.12) 200deg,
+            transparent 220deg
+        );
+        -webkit-mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0) border-box;
+        -webkit-mask-composite: xor;
+        mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0) border-box;
+        mask-composite: exclude;
+        pointer-events: none;
+      }
+      .darkmode ${selector}::after {
+        opacity: 0.6;
+      }
+    `;
+    document.head.appendChild(hlStyle);
   }
 }
 
-function startAnimation() {
-  if (!isAnimating) {
-    isAnimating = true;
-    requestAnimationFrame(updateGlass);
-  }
-}
-
-function handlePointer(x, y, viewportWidth) {
-  mouseX = (x / viewportWidth) * 100;
-  targetPos = 20 + (mouseX / 100) * 60;
-  targetAngle = 30 + (mouseX / 100) * 30;
-  startAnimation();
-}
-
-document.addEventListener('mousemove', (e) => {
-  handlePointer(e.clientX, e.clientY, window.innerWidth);
-});
-
-document.addEventListener('touchmove', (e) => {
-  const touch = e.touches[0];
-  if (touch) {
-    handlePointer(touch.clientX, touch.clientY, window.innerWidth);
-  }
-}, { passive: true });
-
-let scrollTimeout;
-let baseBlur = 15;
-let scrollBlur = 0;
-
-window.addEventListener('scroll', () => {
-  const scrollSpeed = Math.abs(window.scrollY - (window.lastScrollY || 0));
-  window.lastScrollY = window.scrollY;
-
-  scrollBlur = Math.min(scrollSpeed * 0.05, 5);
-  const totalBlur = baseBlur + scrollBlur;
-  navbar.style.setProperty('--glass-blur', `${totalBlur}px`);
-
-  clearTimeout(scrollTimeout);
-  scrollTimeout = setTimeout(() => {
-    scrollBlur = 0;
-    navbar.style.setProperty('--glass-blur', `${baseBlur}px`);
-  }, 300);
-}, { passive: true });
-
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-if (prefersReducedMotion.matches) {
-  navbar.style.setProperty('--glass-highlight-pos', '50%');
-  navbar.style.setProperty('--glass-highlight-angle', '45deg');
-}
+// —— EJECUCIÓN ——
+aplicarLiquidGlass('.navbar', 15);
