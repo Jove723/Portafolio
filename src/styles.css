@@ -9,6 +9,9 @@
   --color-button-bg:#264027;
   --color-muted: #9a9d98;
   --color-indicator: #264027;
+  --color-nav-item: var(--color-primary);
+  --color-nav-pill: var(--color-primary);
+  --color-nav-selected: #ffffff;
 
   /* Typography */
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
@@ -58,6 +61,9 @@
   --color-text: #dce0d9;
   --color-button:#264027;
   --color-button-bg:#dce0d9;
+  --color-nav-item: var(--color-background);
+  --color-nav-pill: var(--color-background);
+  --color-nav-selected: var(--color-indicator);
 }
 
 /* Icon colors */
@@ -656,11 +662,11 @@ footer .contact-info {
     height: 100%;
     display: flex;
     gap: var(--space-15);
-    color: var(--color-background);
+    color: var(--color-nav-item);
 }
 
 .navbar-item-selected {
-    color: var(--color-indicator);
+    color: var(--color-nav-selected);
     pointer-events: none;
 }
 
@@ -684,7 +690,7 @@ footer .contact-info {
 .navbar-indicator {
     position: absolute;
     height: calc(var(--space-30) + var(--font-size-md));
-    background-color: var(--color-background);
+    background-color: var(--color-nav-pill);
     border-radius: var(--radius-full);
     transition: left var(--transition-normal), width var(--transition-normal);
     pointer-events: none;
